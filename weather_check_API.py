@@ -8,7 +8,7 @@ city = input ("Please enter a city name:")
 request_url = f"{BASE_URL}?appid={API_KEY}&q={city}"
 response = requests.get(request_url)
 
-#Code currently displays temperature in fahrenheit as the API call provides temperature in kelvin
+#Code currently displays temperature in fahrenheit, the API currently provides temperature in kelvin
 if response.status_code == 200:
     data = response.json()
     weather = data['weather'][0]['description']
